@@ -11,7 +11,7 @@ editor_options:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse, pacman)
-pacman::p_load(rethinking, brms, ggplot2, metafor, lme4, lmerTest)
+pacman::p_load(rethinking, brms, ggplot2, metafor)
 pacman::p_load(patchwork)
 ```
 
@@ -187,7 +187,6 @@ Step 3: Build a regression model predicting Pitch variability from Diagnosis.
 #motivate it = need to explain why you are choosing one mean or the other and what consequences that has - before looking at the data
 #evaluate model!
 
-
 #MODELS
 #without language: pitch variability is different in the ASD and TD and different individuals will show different variability.
 #i.e. hypotheiss that difference in languge makes no difference
@@ -244,7 +243,6 @@ summary(NS_m0)
 hypothesis(NS_m0, "DiagnosisTD < 0")
 plot(hypothesis(NS_m0, "DiagnosisTD < 0"))
 #model has learned a bit
-
 
 #WITH LANGUAGE
 #NS_f1 <- bf(PitchVariability ~ 0 + Language + Language:Diagnosis + (1|ID))
@@ -322,6 +320,7 @@ Step 4: Now re-run the model with the meta-analytic prior
 ```{r}
 #use meta-analytic prior (after checking it!!)
 
+#define prior
 NS_prior_informed <- c(
   prior(normal(.2, .3), class = b, coef = "Languagedk"), #mean of both groups
   prior(normal(.2, .3), class = b, coef = "Languageus"), #mean of both groups
@@ -331,6 +330,7 @@ NS_prior_informed <- c(
   prior(normal(.32, .3), class = sigma)
 )
 
+#prior model
 NS_prior_informed_check <- brm(
   NS_f1, 
   d,
@@ -341,8 +341,10 @@ NS_prior_informed_check <- brm(
   cores = 2
 )  
 
+#prior check
 pp_check(NS_prior_informed_check, nsamples = 100)
 
+#real model
 NS_m_informed <- brm(
   NS_f1, 
   d,
@@ -353,6 +355,7 @@ NS_m_informed <- brm(
   cores = 2
 ) 
 
+#posterior check
 pp_check(NS_m_informed, nsamples = 100)
 
 #output + checks
@@ -371,7 +374,6 @@ hypothesis(NS_m_informed, "Languagedk:DiagnosisTD < Languageus:DiagnosisTD")
 plot(hypothesis(NS_m_informed, "Languagedk:DiagnosisTD < Languageus:DiagnosisTD"))
 
 NS_m_informed <- add_criterion(NS_m_informed, criterion = "loo", reloo = T)
-
 
 ```
 

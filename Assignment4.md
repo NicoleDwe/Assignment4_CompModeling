@@ -170,30 +170,6 @@ MA_m0 <- brm(
 
     ## Compiling the C++ model
 
-    ## Trying to compile a simple C file
-
-    ## Running /Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB foo.c
-    ## clang -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG   -I"/Users/nicoledwenger/Library/R/3.6/library/Rcpp/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/unsupported"  -I"/Users/nicoledwenger/Library/R/3.6/library/BH/include" -I"/Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/src/"  -I"/Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/rstan/include" -DEIGEN_NO_DEBUG  -D_REENTRANT  -DBOOST_DISABLE_ASSERTS -DBOOST_PENDING_INTEGER_LOG2_HPP -include stan/math/prim/mat/fun/Eigen.hpp   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c foo.c -o foo.o
-    ## In file included from <built-in>:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/stan/math/prim/mat/fun/Eigen.hpp:13:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Dense:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Core:88:
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/src/Core/util/Macros.h:613:1: error: unknown type name 'namespace'
-    ## namespace Eigen {
-    ## ^
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/src/Core/util/Macros.h:613:16: error: expected ';' after top level declarator
-    ## namespace Eigen {
-    ##                ^
-    ##                ;
-    ## In file included from <built-in>:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/stan/math/prim/mat/fun/Eigen.hpp:13:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Dense:1:
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Core:96:10: fatal error: 'complex' file not found
-    ## #include <complex>
-    ##          ^~~~~~~~~
-    ## 3 errors generated.
-    ## make: *** [foo.o] Error 1
-
     ## Start sampling
 
 ``` r
@@ -219,30 +195,6 @@ MA_m1 <- brm(
     ## Warning: Rows containing NAs were excluded from the model.
 
     ## Compiling the C++ model
-    ## Trying to compile a simple C file
-
-    ## Running /Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB foo.c
-    ## clang -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG   -I"/Users/nicoledwenger/Library/R/3.6/library/Rcpp/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/unsupported"  -I"/Users/nicoledwenger/Library/R/3.6/library/BH/include" -I"/Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/src/"  -I"/Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/rstan/include" -DEIGEN_NO_DEBUG  -D_REENTRANT  -DBOOST_DISABLE_ASSERTS -DBOOST_PENDING_INTEGER_LOG2_HPP -include stan/math/prim/mat/fun/Eigen.hpp   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c foo.c -o foo.o
-    ## In file included from <built-in>:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/stan/math/prim/mat/fun/Eigen.hpp:13:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Dense:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Core:88:
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/src/Core/util/Macros.h:613:1: error: unknown type name 'namespace'
-    ## namespace Eigen {
-    ## ^
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/src/Core/util/Macros.h:613:16: error: expected ';' after top level declarator
-    ## namespace Eigen {
-    ##                ^
-    ##                ;
-    ## In file included from <built-in>:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/stan/math/prim/mat/fun/Eigen.hpp:13:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Dense:1:
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Core:96:10: fatal error: 'complex' file not found
-    ## #include <complex>
-    ##          ^~~~~~~~~
-    ## 3 errors generated.
-    ## make: *** [foo.o] Error 1
-
     ## Start sampling
 
 ``` r
@@ -267,11 +219,11 @@ summary(MA_m1)
     ## Group-Level Effects: 
     ## ~Population (Number of levels: 26) 
     ##               Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-    ## sd(Intercept)     0.33      0.10     0.13     0.53 1.00      602      608
+    ## sd(Intercept)     0.32      0.10     0.12     0.52 1.00      628      714
     ## 
     ## Population-Level Effects: 
     ##           Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-    ## Intercept    -0.44      0.09    -0.62    -0.26 1.00     1184     1156
+    ## Intercept    -0.43      0.09    -0.61    -0.25 1.00     1729     1395
     ## 
     ## Samples were drawn using sampling(NUTS). For each parameter, Bulk_ESS
     ## and Tail_ESS are effective sample size measures, and Rhat is the potential
@@ -354,7 +306,6 @@ model quality. Describe and plot the estimates.
 #motivate it = need to explain why you are choosing one mean or the other and what consequences that has - before looking at the data
 #evaluate model!
 
-
 #MODELS
 #without language: pitch variability is different in the ASD and TD and different individuals will show different variability.
 #i.e. hypotheiss that difference in languge makes no difference
@@ -402,30 +353,6 @@ NS_0_priorcheck <- brm(
 
     ## Compiling the C++ model
 
-    ## Trying to compile a simple C file
-
-    ## Running /Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB foo.c
-    ## clang -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG   -I"/Users/nicoledwenger/Library/R/3.6/library/Rcpp/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/unsupported"  -I"/Users/nicoledwenger/Library/R/3.6/library/BH/include" -I"/Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/src/"  -I"/Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/rstan/include" -DEIGEN_NO_DEBUG  -D_REENTRANT  -DBOOST_DISABLE_ASSERTS -DBOOST_PENDING_INTEGER_LOG2_HPP -include stan/math/prim/mat/fun/Eigen.hpp   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c foo.c -o foo.o
-    ## In file included from <built-in>:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/stan/math/prim/mat/fun/Eigen.hpp:13:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Dense:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Core:88:
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/src/Core/util/Macros.h:613:1: error: unknown type name 'namespace'
-    ## namespace Eigen {
-    ## ^
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/src/Core/util/Macros.h:613:16: error: expected ';' after top level declarator
-    ## namespace Eigen {
-    ##                ^
-    ##                ;
-    ## In file included from <built-in>:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/stan/math/prim/mat/fun/Eigen.hpp:13:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Dense:1:
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Core:96:10: fatal error: 'complex' file not found
-    ## #include <complex>
-    ##          ^~~~~~~~~
-    ## 3 errors generated.
-    ## make: *** [foo.o] Error 1
-
     ## Start sampling
 
 ``` r
@@ -448,30 +375,6 @@ NS_m0 <- brm(
 ```
 
     ## Compiling the C++ model
-    ## Trying to compile a simple C file
-
-    ## Running /Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB foo.c
-    ## clang -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG   -I"/Users/nicoledwenger/Library/R/3.6/library/Rcpp/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/unsupported"  -I"/Users/nicoledwenger/Library/R/3.6/library/BH/include" -I"/Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/src/"  -I"/Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/rstan/include" -DEIGEN_NO_DEBUG  -D_REENTRANT  -DBOOST_DISABLE_ASSERTS -DBOOST_PENDING_INTEGER_LOG2_HPP -include stan/math/prim/mat/fun/Eigen.hpp   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c foo.c -o foo.o
-    ## In file included from <built-in>:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/stan/math/prim/mat/fun/Eigen.hpp:13:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Dense:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Core:88:
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/src/Core/util/Macros.h:613:1: error: unknown type name 'namespace'
-    ## namespace Eigen {
-    ## ^
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/src/Core/util/Macros.h:613:16: error: expected ';' after top level declarator
-    ## namespace Eigen {
-    ##                ^
-    ##                ;
-    ## In file included from <built-in>:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/stan/math/prim/mat/fun/Eigen.hpp:13:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Dense:1:
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Core:96:10: fatal error: 'complex' file not found
-    ## #include <complex>
-    ##          ^~~~~~~~~
-    ## 3 errors generated.
-    ## make: *** [foo.o] Error 1
-
     ## Start sampling
 
 ``` r
@@ -495,16 +398,16 @@ summary(NS_m0)
     ## Group-Level Effects: 
     ## ~ID (Number of levels: 149) 
     ##               Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-    ## sd(Intercept)     0.64      0.03     0.57     0.71 1.00      843     1341
+    ## sd(Intercept)     0.65      0.04     0.58     0.72 1.00      779     1249
     ## 
     ## Population-Level Effects: 
     ##             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-    ## Intercept       0.26      0.07     0.13     0.39 1.00      601     1131
-    ## DiagnosisTD    -0.09      0.08    -0.24     0.06 1.00      942      976
+    ## Intercept       0.25      0.07     0.11     0.38 1.00      591      929
+    ## DiagnosisTD    -0.08      0.08    -0.23     0.07 1.00      937     1205
     ## 
     ## Family Specific Parameters: 
     ##       Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-    ## sigma     0.70      0.02     0.67     0.74 1.00     2266     1585
+    ## sigma     0.70      0.02     0.67     0.74 1.00     2719     1499
     ## 
     ## Samples were drawn using sampling(NUTS). For each parameter, Bulk_ESS
     ## and Tail_ESS are effective sample size measures, and Rhat is the potential
@@ -520,7 +423,7 @@ hypothesis(NS_m0, "DiagnosisTD < 0")
 
     ## Hypothesis Tests for class b:
     ##          Hypothesis Estimate Est.Error CI.Lower CI.Upper Evid.Ratio Post.Prob
-    ## 1 (DiagnosisTD) < 0    -0.09      0.08    -0.21     0.04       6.81      0.87
+    ## 1 (DiagnosisTD) < 0    -0.08      0.08    -0.21     0.04       6.07      0.86
     ##   Star
     ## 1     
     ## ---
@@ -537,7 +440,6 @@ plot(hypothesis(NS_m0, "DiagnosisTD < 0"))
 
 ``` r
 #model has learned a bit
-
 
 #WITH LANGUAGE
 #NS_f1 <- bf(PitchVariability ~ 0 + Language + Language:Diagnosis + (1|ID))
@@ -580,30 +482,6 @@ NS_1_priorcheck <- brm(
 ```
 
     ## Compiling the C++ model
-    ## Trying to compile a simple C file
-
-    ## Running /Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB foo.c
-    ## clang -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG   -I"/Users/nicoledwenger/Library/R/3.6/library/Rcpp/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/unsupported"  -I"/Users/nicoledwenger/Library/R/3.6/library/BH/include" -I"/Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/src/"  -I"/Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/rstan/include" -DEIGEN_NO_DEBUG  -D_REENTRANT  -DBOOST_DISABLE_ASSERTS -DBOOST_PENDING_INTEGER_LOG2_HPP -include stan/math/prim/mat/fun/Eigen.hpp   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c foo.c -o foo.o
-    ## In file included from <built-in>:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/stan/math/prim/mat/fun/Eigen.hpp:13:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Dense:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Core:88:
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/src/Core/util/Macros.h:613:1: error: unknown type name 'namespace'
-    ## namespace Eigen {
-    ## ^
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/src/Core/util/Macros.h:613:16: error: expected ';' after top level declarator
-    ## namespace Eigen {
-    ##                ^
-    ##                ;
-    ## In file included from <built-in>:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/stan/math/prim/mat/fun/Eigen.hpp:13:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Dense:1:
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Core:96:10: fatal error: 'complex' file not found
-    ## #include <complex>
-    ##          ^~~~~~~~~
-    ## 3 errors generated.
-    ## make: *** [foo.o] Error 1
-
     ## Start sampling
 
 ``` r
@@ -625,30 +503,6 @@ NS_m1 <- brm(
 ```
 
     ## Compiling the C++ model
-    ## Trying to compile a simple C file
-
-    ## Running /Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB foo.c
-    ## clang -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG   -I"/Users/nicoledwenger/Library/R/3.6/library/Rcpp/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/unsupported"  -I"/Users/nicoledwenger/Library/R/3.6/library/BH/include" -I"/Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/src/"  -I"/Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/rstan/include" -DEIGEN_NO_DEBUG  -D_REENTRANT  -DBOOST_DISABLE_ASSERTS -DBOOST_PENDING_INTEGER_LOG2_HPP -include stan/math/prim/mat/fun/Eigen.hpp   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c foo.c -o foo.o
-    ## In file included from <built-in>:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/stan/math/prim/mat/fun/Eigen.hpp:13:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Dense:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Core:88:
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/src/Core/util/Macros.h:613:1: error: unknown type name 'namespace'
-    ## namespace Eigen {
-    ## ^
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/src/Core/util/Macros.h:613:16: error: expected ';' after top level declarator
-    ## namespace Eigen {
-    ##                ^
-    ##                ;
-    ## In file included from <built-in>:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/stan/math/prim/mat/fun/Eigen.hpp:13:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Dense:1:
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Core:96:10: fatal error: 'complex' file not found
-    ## #include <complex>
-    ##          ^~~~~~~~~
-    ## 3 errors generated.
-    ## make: *** [foo.o] Error 1
-
     ## Start sampling
 
 ``` r
@@ -672,23 +526,23 @@ summary(NS_m1)
     ## Group-Level Effects: 
     ## ~ID (Number of levels: 149) 
     ##               Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-    ## sd(Intercept)     0.50      0.03     0.44     0.57 1.00      827     1443
+    ## sd(Intercept)     0.50      0.03     0.44     0.57 1.00      643     1099
     ## 
     ## Population-Level Effects: 
     ##                        Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS
-    ## Languagedk                -0.21      0.08    -0.37    -0.06 1.00      405
-    ## Languageus                 0.65      0.07     0.51     0.79 1.00     1225
-    ## Languagedk:DiagnosisTD    -0.10      0.08    -0.26     0.04 1.00      985
-    ## Languageus:DiagnosisTD     0.07      0.08    -0.09     0.23 1.00     1759
+    ## Languagedk                -0.22      0.08    -0.37    -0.06 1.00      537
+    ## Languageus                 0.64      0.07     0.50     0.79 1.00      974
+    ## Languagedk:DiagnosisTD    -0.10      0.08    -0.25     0.05 1.00      848
+    ## Languageus:DiagnosisTD     0.07      0.08    -0.08     0.23 1.00     1429
     ##                        Tail_ESS
-    ## Languagedk                  841
-    ## Languageus                 1418
-    ## Languagedk:DiagnosisTD     1275
-    ## Languageus:DiagnosisTD     1616
+    ## Languagedk                 1140
+    ## Languageus                 1377
+    ## Languagedk:DiagnosisTD     1148
+    ## Languageus:DiagnosisTD     1513
     ## 
     ## Family Specific Parameters: 
     ##       Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-    ## sigma     0.71      0.02     0.67     0.74 1.00     1805     1725
+    ## sigma     0.71      0.02     0.67     0.74 1.00     2043     1195
     ## 
     ## Samples were drawn using sampling(NUTS). For each parameter, Bulk_ESS
     ## and Tail_ESS are effective sample size measures, and Rhat is the potential
@@ -706,9 +560,9 @@ hypothesis(NS_m1, "Languagedk:DiagnosisTD < 0")
 
     ## Hypothesis Tests for class b:
     ##                 Hypothesis Estimate Est.Error CI.Lower CI.Upper Evid.Ratio
-    ## 1 (Languagedk:Diagn... < 0     -0.1      0.08    -0.23     0.02       9.99
+    ## 1 (Languagedk:Diagn... < 0     -0.1      0.08    -0.23     0.03       8.39
     ##   Post.Prob Star
-    ## 1      0.91     
+    ## 1      0.89     
     ## ---
     ## 'CI': 90%-CI for one-sided and 95%-CI for two-sided hypotheses.
     ## '*': For one-sided hypotheses, the posterior probability exceeds 95%;
@@ -730,7 +584,7 @@ hypothesis(NS_m1, "Languageus:DiagnosisTD < 0")
 
     ## Hypothesis Tests for class b:
     ##                 Hypothesis Estimate Est.Error CI.Lower CI.Upper Evid.Ratio
-    ## 1 (Languageus:Diagn... < 0     0.07      0.08    -0.06      0.2       0.22
+    ## 1 (Languageus:Diagn... < 0     0.07      0.08    -0.06     0.21       0.21
     ##   Post.Prob Star
     ## 1      0.18     
     ## ---
@@ -754,9 +608,9 @@ hypothesis(NS_m1, "Languagedk:DiagnosisTD < Languageus:DiagnosisTD")
 
     ## Hypothesis Tests for class b:
     ##                 Hypothesis Estimate Est.Error CI.Lower CI.Upper Evid.Ratio
-    ## 1 (Languagedk:Diagn... < 0    -0.18      0.11    -0.35     0.01       16.7
+    ## 1 (Languagedk:Diagn... < 0    -0.17      0.11    -0.36     0.01      14.04
     ##   Post.Prob Star
-    ## 1      0.94     
+    ## 1      0.93     
     ## ---
     ## 'CI': 90%-CI for one-sided and 95%-CI for two-sided hypotheses.
     ## '*': For one-sided hypotheses, the posterior probability exceeds 95%;
@@ -780,13 +634,13 @@ NS_m0 <- add_criterion(NS_m0, criterion = "loo", reloo = T)
     ## The model will be refit 3 times.
 
     ## 
-    ## Fitting model 1 out of 3 (leaving out observation 115)
+    ## Fitting model 1 out of 3 (leaving out observation 639)
 
     ## 
-    ## Fitting model 2 out of 3 (leaving out observation 639)
+    ## Fitting model 2 out of 3 (leaving out observation 640)
 
     ## 
-    ## Fitting model 3 out of 3 (leaving out observation 640)
+    ## Fitting model 3 out of 3 (leaving out observation 770)
 
     ## Start sampling
     ## Start sampling
@@ -796,24 +650,12 @@ NS_m0 <- add_criterion(NS_m0, criterion = "loo", reloo = T)
 NS_m1 <- add_criterion(NS_m1, criterion = "loo", reloo = T)
 ```
 
-    ## 4 problematic observation(s) found.
-    ## The model will be refit 4 times.
+    ## 1 problematic observation(s) found.
+    ## The model will be refit 1 times.
 
     ## 
-    ## Fitting model 1 out of 4 (leaving out observation 125)
+    ## Fitting model 1 out of 1 (leaving out observation 640)
 
-    ## 
-    ## Fitting model 2 out of 4 (leaving out observation 244)
-
-    ## 
-    ## Fitting model 3 out of 4 (leaving out observation 501)
-
-    ## 
-    ## Fitting model 4 out of 4 (leaving out observation 640)
-
-    ## Start sampling
-    ## Start sampling
-    ## Start sampling
     ## Start sampling
 
 ``` r
@@ -827,8 +669,8 @@ loo_model_weights(NS_m0, NS_m1)
     ## Method: stacking
     ## ------
     ##       weight
-    ## NS_m0 0.373 
-    ## NS_m1 0.627
+    ## NS_m0 0.371 
+    ## NS_m1 0.629
 
 ``` r
 #70% percepnt that the model with language is the best, twice as many chances that the second model is better 
@@ -840,6 +682,7 @@ model quality. Describe and plot the estimates.
 ``` r
 #use meta-analytic prior (after checking it!!)
 
+#define prior
 NS_prior_informed <- c(
   prior(normal(.2, .3), class = b, coef = "Languagedk"), #mean of both groups
   prior(normal(.2, .3), class = b, coef = "Languageus"), #mean of both groups
@@ -849,6 +692,7 @@ NS_prior_informed <- c(
   prior(normal(.32, .3), class = sigma)
 )
 
+#prior model
 NS_prior_informed_check <- brm(
   NS_f1, 
   d,
@@ -864,39 +708,17 @@ NS_prior_informed_check <- brm(
 
     ## recompiling to avoid crashing R session
 
-    ## Trying to compile a simple C file
-
-    ## Running /Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB foo.c
-    ## clang -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG   -I"/Users/nicoledwenger/Library/R/3.6/library/Rcpp/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/unsupported"  -I"/Users/nicoledwenger/Library/R/3.6/library/BH/include" -I"/Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/src/"  -I"/Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/rstan/include" -DEIGEN_NO_DEBUG  -D_REENTRANT  -DBOOST_DISABLE_ASSERTS -DBOOST_PENDING_INTEGER_LOG2_HPP -include stan/math/prim/mat/fun/Eigen.hpp   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c foo.c -o foo.o
-    ## In file included from <built-in>:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/stan/math/prim/mat/fun/Eigen.hpp:13:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Dense:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Core:88:
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/src/Core/util/Macros.h:613:1: error: unknown type name 'namespace'
-    ## namespace Eigen {
-    ## ^
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/src/Core/util/Macros.h:613:16: error: expected ';' after top level declarator
-    ## namespace Eigen {
-    ##                ^
-    ##                ;
-    ## In file included from <built-in>:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/stan/math/prim/mat/fun/Eigen.hpp:13:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Dense:1:
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Core:96:10: fatal error: 'complex' file not found
-    ## #include <complex>
-    ##          ^~~~~~~~~
-    ## 3 errors generated.
-    ## make: *** [foo.o] Error 1
-
     ## Start sampling
 
 ``` r
+#prior check
 pp_check(NS_prior_informed_check, nsamples = 100)
 ```
 
 ![](Assignment4_files/figure-markdown_github/unnamed-chunk-4-1.png)
 
 ``` r
+#real model
 NS_m_informed <- brm(
   NS_f1, 
   d,
@@ -909,33 +731,10 @@ NS_m_informed <- brm(
 ```
 
     ## Compiling the C++ model
-    ## Trying to compile a simple C file
-
-    ## Running /Library/Frameworks/R.framework/Resources/bin/R CMD SHLIB foo.c
-    ## clang -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG   -I"/Users/nicoledwenger/Library/R/3.6/library/Rcpp/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/unsupported"  -I"/Users/nicoledwenger/Library/R/3.6/library/BH/include" -I"/Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/src/"  -I"/Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/"  -I"/Users/nicoledwenger/Library/R/3.6/library/rstan/include" -DEIGEN_NO_DEBUG  -D_REENTRANT  -DBOOST_DISABLE_ASSERTS -DBOOST_PENDING_INTEGER_LOG2_HPP -include stan/math/prim/mat/fun/Eigen.hpp   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include  -fPIC  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -c foo.c -o foo.o
-    ## In file included from <built-in>:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/stan/math/prim/mat/fun/Eigen.hpp:13:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Dense:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Core:88:
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/src/Core/util/Macros.h:613:1: error: unknown type name 'namespace'
-    ## namespace Eigen {
-    ## ^
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/src/Core/util/Macros.h:613:16: error: expected ';' after top level declarator
-    ## namespace Eigen {
-    ##                ^
-    ##                ;
-    ## In file included from <built-in>:1:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/StanHeaders/include/stan/math/prim/mat/fun/Eigen.hpp:13:
-    ## In file included from /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Dense:1:
-    ## /Users/nicoledwenger/Library/R/3.6/library/RcppEigen/include/Eigen/Core:96:10: fatal error: 'complex' file not found
-    ## #include <complex>
-    ##          ^~~~~~~~~
-    ## 3 errors generated.
-    ## make: *** [foo.o] Error 1
-
     ## Start sampling
 
 ``` r
+#posterior check
 pp_check(NS_m_informed, nsamples = 100)
 ```
 
@@ -956,23 +755,23 @@ summary(NS_m_informed)
     ## Group-Level Effects: 
     ## ~ID (Number of levels: 149) 
     ##               Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-    ## sd(Intercept)     0.51      0.03     0.45     0.58 1.01      541     1328
+    ## sd(Intercept)     0.51      0.03     0.45     0.58 1.00      755     1357
     ## 
     ## Population-Level Effects: 
     ##                        Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS
-    ## Languagedk                -0.04      0.08    -0.20     0.12 1.00      428
-    ## Languageus                 0.77      0.07     0.62     0.91 1.00      871
-    ## Languagedk:DiagnosisTD    -0.39      0.08    -0.55    -0.24 1.00      931
-    ## Languageus:DiagnosisTD    -0.22      0.08    -0.37    -0.06 1.00     1517
+    ## Languagedk                -0.05      0.08    -0.20     0.11 1.00      510
+    ## Languageus                 0.77      0.08     0.62     0.93 1.00      957
+    ## Languagedk:DiagnosisTD    -0.39      0.08    -0.54    -0.24 1.00     1053
+    ## Languageus:DiagnosisTD    -0.22      0.08    -0.39    -0.07 1.00     1775
     ##                        Tail_ESS
-    ## Languagedk                  963
-    ## Languageus                 1221
-    ## Languagedk:DiagnosisTD     1295
-    ## Languageus:DiagnosisTD     1713
+    ## Languagedk                 1030
+    ## Languageus                 1138
+    ## Languagedk:DiagnosisTD     1353
+    ## Languageus:DiagnosisTD     1703
     ## 
     ## Family Specific Parameters: 
     ##       Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-    ## sigma     0.71      0.02     0.67     0.74 1.00     2386     1292
+    ## sigma     0.71      0.02     0.68     0.74 1.00     2793     1700
     ## 
     ## Samples were drawn using sampling(NUTS). For each parameter, Bulk_ESS
     ## and Tail_ESS are effective sample size measures, and Rhat is the potential
@@ -985,7 +784,7 @@ hypothesis(NS_m_informed, "Languagedk:DiagnosisTD < 0")
 
     ## Hypothesis Tests for class b:
     ##                 Hypothesis Estimate Est.Error CI.Lower CI.Upper Evid.Ratio
-    ## 1 (Languagedk:Diagn... < 0    -0.39      0.08    -0.52    -0.27        Inf
+    ## 1 (Languagedk:Diagn... < 0    -0.39      0.08    -0.51    -0.26        Inf
     ##   Post.Prob Star
     ## 1         1    *
     ## ---
@@ -1007,7 +806,7 @@ hypothesis(NS_m_informed, "Languageus:DiagnosisTD < 0")
 
     ## Hypothesis Tests for class b:
     ##                 Hypothesis Estimate Est.Error CI.Lower CI.Upper Evid.Ratio
-    ## 1 (Languageus:Diagn... < 0    -0.22      0.08    -0.35    -0.09        249
+    ## 1 (Languageus:Diagn... < 0    -0.22      0.08    -0.35    -0.09     332.33
     ##   Post.Prob Star
     ## 1         1    *
     ## ---
@@ -1029,7 +828,7 @@ hypothesis(NS_m_informed, "Languagedk:DiagnosisTD < Languageus:DiagnosisTD")
 
     ## Hypothesis Tests for class b:
     ##                 Hypothesis Estimate Est.Error CI.Lower CI.Upper Evid.Ratio
-    ## 1 (Languagedk:Diagn... < 0    -0.17      0.11    -0.37     0.02      14.27
+    ## 1 (Languagedk:Diagn... < 0    -0.17      0.11    -0.35     0.02      12.79
     ##   Post.Prob Star
     ## 1      0.93     
     ## ---
@@ -1048,19 +847,15 @@ plot(hypothesis(NS_m_informed, "Languagedk:DiagnosisTD < Languageus:DiagnosisTD"
 NS_m_informed <- add_criterion(NS_m_informed, criterion = "loo", reloo = T)
 ```
 
-    ## 3 problematic observation(s) found.
-    ## The model will be refit 3 times.
+    ## 2 problematic observation(s) found.
+    ## The model will be refit 2 times.
 
     ## 
-    ## Fitting model 1 out of 3 (leaving out observation 244)
+    ## Fitting model 1 out of 2 (leaving out observation 501)
 
     ## 
-    ## Fitting model 2 out of 3 (leaving out observation 639)
+    ## Fitting model 2 out of 2 (leaving out observation 640)
 
-    ## 
-    ## Fitting model 3 out of 3 (leaving out observation 640)
-
-    ## Start sampling
     ## Start sampling
     ## Start sampling
 
@@ -1083,16 +878,16 @@ loo_model_weights(NS_m1, NS_m_informed)
     ## Method: stacking
     ## ------
     ##               weight
-    ## NS_m1         0.183 
-    ## NS_m_informed 0.817
+    ## NS_m1         0.743 
+    ## NS_m_informed 0.257
 
 ``` r
 loo_compare(NS_m1, NS_m_informed)
 ```
 
     ##               elpd_diff se_diff
-    ## NS_m_informed  0.0       0.0   
-    ## NS_m1         -0.1       2.1
+    ## NS_m1          0.0       0.0   
+    ## NS_m_informed -1.4       1.3
 
 ``` r
 #informed model has a lot more chances of being the true one than the uninformed one - lot of reasons to why that is
